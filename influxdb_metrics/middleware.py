@@ -119,7 +119,7 @@ class InfluxDBRequestMiddleware(MiddlewareMixin):
                     'referer': referer,
                     'referer_tld': referer_tld_string,
                     'full_path': url,
-                    'path': request.path,
+                    'path': path,
                     'campaign': campaign,
                 },
                 'fields': {'value': ms, },
