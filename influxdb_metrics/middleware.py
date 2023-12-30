@@ -95,6 +95,8 @@ class InfluxDBRequestMiddleware(MiddlewareMixin):
             url = request.get_full_path()
             url_query = parse.parse_qs(parse.urlparse(url).query)
 
+            path = request.path.rstrip("/")
+
             # This allows you to measure click rates for ad-campaigns, just
             # make sure that your ads have `?campaign=something` in the URL
             campaign_keyword = getattr(
